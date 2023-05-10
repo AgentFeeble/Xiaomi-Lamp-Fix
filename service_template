@@ -1,0 +1,13 @@
+[Unit]
+Description=Runs a node script that will restart a Xiaomi lamp plugged into a TP-Link smart plug if it isn't available on the network.
+After=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+ExecStart=/usr/bin/npm start --prefix {project_directory}
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+
